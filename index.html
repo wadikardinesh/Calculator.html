@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+           
+        }
+        body {
+            background: conic-gradient(from -.5turn at bottom right, deeppink, cyan, rebeccapurple);
+            background-size: cover;
+        }
+
+        .container {
+            /* border: 2px solid black; */
+            width: 100vw;
+            height: 45vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .calculator {
+            background-color:white;
+            align-items: center;
+            border-radius: 10px;
+            padding: 5px;
+             width: 460px; 
+             height: 470px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        }
+
+        #input {
+            width: 460px;
+            padding: 20px;
+            text-align: right;
+            direction: ltr;
+            font-size: 30px;
+            box-sizing: border-box;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            
+        }
+
+        .btn {
+            width: 24%;
+            font-size: 40px;
+            margin-top: 10px;
+            border-radius: 10px;
+            background: rgb(239, 238, 238);
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .ebtn {
+            width: 100%;
+            font-size: 40px;
+            margin-top: 10px;
+            background: rgb(239, 238, 238);
+            border: none;
+            padding: 12px;
+        }
+
+        .btn:hover,
+        .ebtn:hover {
+            background-color: rgb(187, 183, 183);
+            transition: .5s ease-out;
+            border-radius: 10px;
+
+        }
+        @media screen  and (max-width:500px)  {
+            .calculator{
+                width:300px;
+                height: 470px;
+            }
+            #input{
+                width: 300px;
+            }
+          
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+
+            <input type="text" id="input" placeholder="0"><br>
+
+            <button class="btn" onclick="press(1)">1</button>
+            <button class="btn" onclick="press(2)">2</button>
+            <button class="btn" onclick="press(3)">3</button>
+            <button class="btn" onclick="press('+')">+</button><br>
+
+            <button class="btn" onclick="press(4)">4</button>
+            <button class="btn" onclick="press(5)">5</button>
+            <button class="btn" onclick="press(6)">6</button>
+            <button class="btn" onclick="press('-')">-</button><br>
+
+            <button class="btn" onclick="press(7)">7</button>
+            <button class="btn" onclick="press(8)">8</button>
+            <button class="btn" onclick="press(9)">9</button>
+            <button class="btn" onclick="press('*')">*</button><br>
+
+            <button class="btn" onclick="press('.')">.</button>
+            <button class="btn" onclick="press(0)">0</button>
+            <button class="btn" onclick="erase()">C</button>
+            <button class="btn" onclick="press('/')">/</button>
+
+            <button class="ebtn" onclick="equal()">=</button>
+        </div>
+    </div>
+
+    <!-- <script src="script.js"> </script> -->
+
+<script>
+
+
+let user = document.getElementById('input');
+let exp ='';
+
+press=(num)=>{
+    exp +=num;
+    input.value = exp;
+}
+equal =()=>{
+    input.value = eval(exp);
+    exp = '';
+}
+erase=()=>{
+    input.value = '';
+    exp=''
+}
+
+</script>
+</body>
+
+</html>
